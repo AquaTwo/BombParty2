@@ -24,16 +24,15 @@ namespace BombParty2
 
         public game()
         {
-            InitializeComponent();
-
-            promptGenerator();
-
             
+            InitializeComponent();
+            promptGenerator();
 
         }
 
         private void promptGenerator()
         {
+            livesLabel.Text = "Lives: " + globals.lives.ToString();
 
             Random random = new Random();
 
@@ -43,10 +42,6 @@ namespace BombParty2
             bombCountdown = 7;
             bombTimer.Enabled = true;
             promptLabel.Text = prompt1 + prompt2.ToString();
-
-
-
-
         }
 
         private void bombTimer_Tick(object sender, EventArgs e)
@@ -159,13 +154,5 @@ namespace BombParty2
         {
             this.Close();
         }
-    }
-
-    public static class globals
-    {
-        public static int lives = 3;
-
-
-
     }
 }

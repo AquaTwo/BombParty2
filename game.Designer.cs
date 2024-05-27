@@ -84,9 +84,9 @@
             this.livesLabel.BackColor = System.Drawing.Color.Red;
             this.livesLabel.Location = new System.Drawing.Point(378, 62);
             this.livesLabel.Name = "livesLabel";
-            this.livesLabel.Size = new System.Drawing.Size(44, 13);
+            this.livesLabel.Size = new System.Drawing.Size(38, 13);
             this.livesLabel.TabIndex = 3;
-            this.livesLabel.Text = "Lives: 3";
+            this.livesLabel.Text = "Lives: ";
             this.livesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // returnMenuButton
