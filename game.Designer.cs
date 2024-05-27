@@ -34,6 +34,7 @@
             this.bombTimer = new System.Windows.Forms.Timer(this.components);
             this.promptInput = new System.Windows.Forms.TextBox();
             this.livesLabel = new System.Windows.Forms.Label();
+            this.returnMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // promptLabel
@@ -46,6 +47,7 @@
             this.promptLabel.Size = new System.Drawing.Size(13, 13);
             this.promptLabel.TabIndex = 0;
             this.promptLabel.Text = "  ";
+            this.promptLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bombTimerLabel
             // 
@@ -57,6 +59,7 @@
             this.bombTimerLabel.Size = new System.Drawing.Size(13, 13);
             this.bombTimerLabel.TabIndex = 1;
             this.bombTimerLabel.Text = "7";
+            this.bombTimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bombTimer
             // 
@@ -66,6 +69,7 @@
             // promptInput
             // 
             this.promptInput.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.promptInput.BackColor = System.Drawing.SystemColors.Control;
             this.promptInput.Location = new System.Drawing.Point(350, 211);
             this.promptInput.Name = "promptInput";
             this.promptInput.Size = new System.Drawing.Size(100, 20);
@@ -83,6 +87,19 @@
             this.livesLabel.Size = new System.Drawing.Size(44, 13);
             this.livesLabel.TabIndex = 3;
             this.livesLabel.Text = "Lives: 3";
+            this.livesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // returnMenuButton
+            // 
+            this.returnMenuButton.Enabled = false;
+            this.returnMenuButton.Location = new System.Drawing.Point(310, 186);
+            this.returnMenuButton.Name = "returnMenuButton";
+            this.returnMenuButton.Size = new System.Drawing.Size(180, 79);
+            this.returnMenuButton.TabIndex = 4;
+            this.returnMenuButton.Text = "Return To Menu";
+            this.returnMenuButton.UseVisualStyleBackColor = true;
+            this.returnMenuButton.Visible = false;
+            this.returnMenuButton.Click += new System.EventHandler(this.returnMenuButton_Click);
             // 
             // game
             // 
@@ -93,9 +110,10 @@
             this.Controls.Add(this.promptInput);
             this.Controls.Add(this.bombTimerLabel);
             this.Controls.Add(this.promptLabel);
+            this.Controls.Add(this.returnMenuButton);
             this.Name = "game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "game";
+            this.Text = "BombParty";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +126,6 @@
         private System.Windows.Forms.Timer bombTimer;
         private System.Windows.Forms.TextBox promptInput;
         private System.Windows.Forms.Label livesLabel;
+        private System.Windows.Forms.Button returnMenuButton;
     }
 }

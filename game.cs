@@ -51,36 +51,45 @@ namespace BombParty2
 
         private void bombTimer_Tick(object sender, EventArgs e)
         {
-
-            if (globals.lives == 0)
-            {
-                promptLabel.Text = "Game Over!";
-                bombTimerLabel.Text = "";
-                
-            }
-
-            else if (bombCountdown > -1)
+            if (bombCountdown > -1)
             {
                 bombTimerLabel.Text = bombCountdown.ToString();
                 bombCountdown--;
             }
 
-            else
+            else if (bombCountdown <= 0)
             {
                 bombTimer.Enabled = false;
                 globals.lives = globals.lives - 1;
-                livesLabel.Text = "Lives: "+globals.lives.ToString();
-                promptGenerator();
-
+                livesLabel.Text = "Lives: " + globals.lives.ToString();
+               
+                if (globals.lives == 0 && bombCountdown <= 7)
+                {
+                    bombTimerLabel.Text = "";
+                    promptLabel.Location = new Point(370, 112);
+                    promptLabel.Text = "Game Over!";
+                    promptInput.Enabled = false;
+                    promptInput.Visible = false;
+                    returnMenuButton.Enabled = true;
+                    returnMenuButton.Visible = true;
+                }
+                else
+                {
+                    promptGenerator();
+                }
+                    
             }
-           
+            else
+            {
+                
+            }
         }
 
         private void promptInput_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             userAnswer = promptInput.Text.ToLower();
-            if (e.KeyChar == 13)
+            if (e.KeyChar == 13 && bombCountdown > 0)
             {
                 
                 bool valid = promptValidation();
@@ -145,7 +154,11 @@ namespace BombParty2
             return false;
 
         }
-        
+
+        private void returnMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
     public static class globals

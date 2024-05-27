@@ -14,15 +14,10 @@ namespace BombParty2
     public partial class main : Form
     {
         game game = new game();
-
+        
         public main()
         {
             InitializeComponent();
-
-            if (globals.lives == -1)
-            {
-                game.Close();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)

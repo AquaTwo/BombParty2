@@ -50,7 +50,7 @@
             this.Controls.Add(this.playGameButton);
             this.Name = "main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Bomb Party";
             this.ResumeLayout(false);
 
         }
