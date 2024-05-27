@@ -56,9 +56,9 @@
             this.bombTimerLabel.BackColor = System.Drawing.Color.Red;
             this.bombTimerLabel.Location = new System.Drawing.Point(394, 237);
             this.bombTimerLabel.Name = "bombTimerLabel";
-            this.bombTimerLabel.Size = new System.Drawing.Size(13, 13);
+            this.bombTimerLabel.Size = new System.Drawing.Size(10, 13);
             this.bombTimerLabel.TabIndex = 1;
-            this.bombTimerLabel.Text = "7";
+            this.bombTimerLabel.Text = " ";
             this.bombTimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bombTimer

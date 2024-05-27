@@ -19,7 +19,7 @@ namespace BombParty2
         char[] alphabet =  "abcdefghijklmnopqrstuvwxyz".ToCharArray();
         char prompt1;
         char prompt2;
-        int bombCountdown = 7;
+        int bombCountdown = globals.bombDurationTimer;
         string userAnswer;
 
         public game()
@@ -39,7 +39,7 @@ namespace BombParty2
             prompt1 = alphabet[random.Next(alphabet.Length)];
             prompt2 = alphabet[random.Next(alphabet.Length)];
 
-            bombCountdown = 7;
+            bombCountdown = globals.bombDurationTimer;
             bombTimer.Enabled = true;
             promptLabel.Text = prompt1 + prompt2.ToString();
         }
@@ -58,7 +58,7 @@ namespace BombParty2
                 globals.lives = globals.lives - 1;
                 livesLabel.Text = "Lives: " + globals.lives.ToString();
                
-                if (globals.lives == 0 && bombCountdown <= 7)
+                if (globals.lives == 0 && bombCountdown <= globals.bombDurationTimer)
                 {
                     bombTimerLabel.Text = "";
                     promptLabel.Location = new Point(370, 112);

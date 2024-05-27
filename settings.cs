@@ -22,15 +22,18 @@ namespace BombParty2
         private void livesValue_ValueChanged(object sender, EventArgs e)
         {
             globals.lives = ((int)livesValue.Value);
-            label1.Text = globals.lives.ToString();
+        }
+
+        private void bombDuration_ValueChanged(object sender, EventArgs e)
+        {
+            globals.bombDurationTimer = ((int)bombDuration.Value);
         }
     }
     public static class globals
     {
 
-        public static int lives = 3; 
-
-
+        public static int lives = 3;
+        public static int bombDurationTimer = 7;
 
     }
 }
